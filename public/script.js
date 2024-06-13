@@ -69,12 +69,7 @@ function loginSuccess(username) {
 }
 
 function vote(option) {
-    const userId = localStorage.getItem('userId');
-    if (userId) {
-        socket.emit('vote', { userId, option });
-    } else {
-        alert('You must be logged in to vote.');
-    }
+    socket.emit('vote', option);
 }
 
 socket.on('updatePoll', (pollData) => {
