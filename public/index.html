@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Polling and Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="register" class="register-container">
+        <h2>Register</h2>
+        <form onsubmit="event.preventDefault(); register();">
+            <label for="registerUsername">Username:</label>
+            <input id="registerUsername" type="text" placeholder="Enter your username" required>
+            <label for="registerEmail">Email:</label>
+            <input id="registerEmail" type="email" placeholder="Enter your email" required>
+            <label for="registerMobile">Mobile Number:</label>
+            <input id="registerMobile" type="tel" placeholder="Enter your mobile number" required>
+            <label for="registerPassword">Password:</label>
+            <input id="registerPassword" type="password" placeholder="Enter your password" required>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input id="confirmPassword" type="password" placeholder="Confirm your password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+        </div>
+    </div>
+    <div id="login" class="login-container" style="display:none;">
+        <h2>Login</h2>
+        <form onsubmit="event.preventDefault(); login();">
+            <label for="loginUsername">Username:</label>
+            <input id="loginUsername" type="text" placeholder="Enter your username" required>
+            <label for="loginPassword">Password:</label>
+            <input id="loginPassword" type="password" placeholder="Enter your password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="poll" class="poll-container" style="display:none;">
+        <h2>Vote for your favorite option:</h2>
+        <button onclick="vote('Climate_Change')">Climate Change</button>
+        <button onclick="vote('Rise_In_Temperature')">Rise In Temperature</button>
+        <button onclick="vote('Sustainable_Development')">Sustainable Development</button>
+        <div id="pollResults">
+            <p>Climate Change: <span id="Climate_ChangeCount">0</span></p>
+            <p>Rise In Temperature: <span id="Rise_In_TemperatureCount">0</span></p>
+            <p>Sustainable Development: <span id="Sustainable_DevelopmentCount">0</span></p>
+        </div>
+    </div>
+    <div id="chat" class="chat-container" style="display:none;">
+        <h2>Chat</h2>
+        <div id="messages"></div>
+        <input id="messageInput" type="text" placeholder="Type a message..." oninput="showTypingIndicator()">
+        <button onclick="sendMessage()">Send</button>
+        <p id="typingIndicator" style="display:none;"></p>
+        <button onclick="logout()">Logout</button>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

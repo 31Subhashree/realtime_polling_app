@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(''); /* Replace with your desired background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container, .login-container, .poll-container, .chat-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px; /* Ensure the form does not get too wide */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-container h2, .login-container h2, .poll-container h2, .chat-container h2 {
+    margin-bottom: 20px;
+}
+
+.register-container form, .login-container form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.register-container label, .login-container label {
+    margin-bottom: 10px;
+    text-align: left; /* Align labels to the left */
+}
+
+.register-container input[type="text"],
+.register-container input[type="password"],
+.register-container input[type="email"],
+.register-container input[type="tel"],
+.login-container input[type="email"],
+.login-container input[type="text"],
+.login-container input[type="tel"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Add border radius to input fields */
+}
+
+.register-container button[type="submit"],
+.login-container button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register-container button[type="submit"]:hover,
+.login-container button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.poll-container button, .chat-container button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.poll-container button:hover, .chat-container button:hover {
+    background-color: #3e8e41;
+}
+
+.poll-container #pollResults p, .chat-container #messages div {
+    text-align: left;
+    margin: 10px 0;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .register-container, .login-container, .poll-container, .chat-container {
+        width: 95%;
+    }
+}
+
+#messages {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+#messageInput {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#typingIndicator {
+    font-style: italic;
+    color: #888;
+    text-align: left;
+    width: 100%;
+}
