@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +18,8 @@
     "socket.io": "^4.7.5",
     "sqlite3": "^5.1.7",
     "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
